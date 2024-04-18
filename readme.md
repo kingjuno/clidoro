@@ -14,7 +14,8 @@ Demo (sorry for the bad quality lol):
 
 ![Alt Text](/assets/clidoro.gif)
 
-**Do `pip install clidoro`. Then just type `clidoro` whenever you want.
+To install Do `pip install clidoro`. Then just type `clidoro` whenever you want.
+
 **For Devs**: To install: Clone the repo and do a `pip install -e .`. Then just type `clidoro` whenever you want.
 
 
