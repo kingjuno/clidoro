@@ -1,8 +1,11 @@
 from setuptools import find_packages, setup
 
+with open("README.md", "r", encoding="utf-8") as f:
+    long_description = "\n" + f.read()
+
 MAJOR_VERSION = "0"
 MINOR_VERSION = "0"
-MICRO_VERSION = "2"
+MICRO_VERSION = "3"
 VERSION = "{}.{}.{}".format(MAJOR_VERSION, MINOR_VERSION, MICRO_VERSION)
 
 
@@ -14,11 +17,18 @@ setup(
     zip_safe=False,
     platforms="Linux",
     description="clidoro: pomodoro in your cli",
+    long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/kingjuno/clidoro",
     entry_points={"console_scripts": ["clidoro = clidoro.clidoro:main"]},
     keywords=["Productivity", "Pomodoro"],
-    install_requires=["playsound", "alive-progress", "simple-term-menu"],
+    install_requires=[
+        "playsound",
+        "alive-progress",
+        "simple-term-menu",
+        "requests",
+        "colorama",
+    ],
     classifiers=[
         "Intended Audience :: Developers",
         "Intended Audience :: Customer Service",
