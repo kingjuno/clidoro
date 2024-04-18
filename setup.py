@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 MAJOR_VERSION = "0"
 MINOR_VERSION = "1"
-MICRO_VERSION = "0"
+MICRO_VERSION = "3"
 VERSION = "{}.{}.{}".format(MAJOR_VERSION, MINOR_VERSION, MICRO_VERSION)
 
 
@@ -51,4 +51,7 @@ setup(
         "Topic :: System :: Systems Administration",
         "Topic :: Utilities",
     ],
+    package_data={
+        "clidoro": ["*.png"],
+    },
 )

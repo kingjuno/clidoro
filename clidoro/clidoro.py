@@ -35,7 +35,7 @@ def timer(menu, _save=False):
         else:
             _time = times[menu_entry_index]
             stats = _timer(
-                0.01, "simple-notification", CACHE_DIR, "pomodoro" if _save else "break"
+                _time, "simple-notification", CACHE_DIR, "pomodoro" if _save else "break"
             )
         if _save and stats > 0:
             save_to_db([[start_time, _time]], CACHE_DIR)
