@@ -34,7 +34,7 @@ def timer(menu, _save=False):
             break
         else:
             _time = times[menu_entry_index]
-            stats = _timer(0.05, "simple-notification", CACHE_DIR)
+            stats = _timer(_time, "simple-notification", CACHE_DIR)
         if _save and stats > 0:
             save_to_db([[start_time, _time]], CACHE_DIR)
 
