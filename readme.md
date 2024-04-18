@@ -14,10 +14,14 @@ Demo (sorry for the bad quality lol):
 
 ![Alt Text](/assets/clidoro.gif)
 
-To install: Clone the repo and do a `pip install -e .`. Then just type `clidoro` whenever you want.
+**Do `pip install clidoro`. Then just type `clidoro` whenever you want.
+**For Devs**: To install: Clone the repo and do a `pip install -e .`. Then just type `clidoro` whenever you want.
 
 
 
 TODO:
-- add windows support
-- add mac support
+- [ ] add windows support (not tested)
+- [ ] add mac support (not tested)
+- [x] pypi
+- [ ] background sound
+- [ ] custom notification sound (use my [data-server](https://github.com/kingjuno/data-server))

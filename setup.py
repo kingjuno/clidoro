@@ -14,7 +14,6 @@ setup(
     zip_safe=False,
     platforms="Linux",
     description="clidoro: pomodoro in your cli",
-    long_description=open("readme.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/kingjuno/clidoro",
     entry_points={"console_scripts": ["clidoro = clidoro.clidoro:main"]},
