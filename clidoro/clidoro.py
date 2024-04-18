@@ -5,7 +5,7 @@ from simple_term_menu import TerminalMenu
 
 from clidoro._utils import _timer, timestamp_to_datetime
 from clidoro.chart import history, history_all
-from clidoro.data import save_to_db
+from clidoro.data import clear_db, save_to_db
 
 TITLE = """        _   _     _                 
        | | (_)   | |                
@@ -34,7 +34,9 @@ def timer(menu, _save=False):
             break
         else:
             _time = times[menu_entry_index]
-            stats = _timer(_time, "simple-notification", CACHE_DIR)
+            stats = _timer(
+                0.01, "simple-notification", CACHE_DIR, "pomodoro" if _save else "break"
+            )
         if _save and stats > 0:
             save_to_db([[start_time, _time]], CACHE_DIR)
 
@@ -48,6 +50,16 @@ def history_menu(menu):
             _history = history(CACHE_DIR).replace("\n\n", "\n")
         elif menu_entry_index == 1:
             _history = history_all(CACHE_DIR)
+        elif menu_entry_index == 2:
+            delete_menu = TerminalMenu(
+                ["accept", "exit"],
+                accept_keys=("enter", "alt-d"),
+                menu_highlight_style=("bg_black", "fg_green"),
+            )
+            delete_index = delete_menu.show()
+            if delete_index == 0:
+                clear_db(CACHE_DIR)
+            return
         print(TITLE, _history, sep="\n")
         terminal_menu = TerminalMenu(
             ["exit"],
@@ -61,7 +73,7 @@ def main():
     cli_options = ["start", "break", "history", "exit"]
     pomodoro_options = ["20 mins", "25 mins", "30 mins", "45 mins", "60 mins", "back"]
     break_options = ["5 mins", "10 mins", "15 mins", "30 mins", "back"]
-    history_options = ["Pomodoros by weekdays", "Stats", "exit"]
+    history_options = ["Pomodoros by weekdays", "Stats", "clear DB", "exit"]
     terminal_menu = TerminalMenu(
         cli_options,
         title=TITLE,

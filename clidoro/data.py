@@ -1,3 +1,4 @@
+import os
 import sqlite3
 
 
@@ -17,3 +18,12 @@ def save_to_db(dates, cache_dir):
     cursor.executemany("INSERT INTO random_data (date, amount) VALUES (?, ?)", dates)
     conn.commit()
     conn.close()
+
+
+def clear_db(cache_dir):
+    db_path = os.path.join(cache_dir, "clidoro.sqlite")
+    try:
+        if os.path.exists(db_path):
+            os.remove(db_path)
+    except:
+        ...

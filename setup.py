@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as f:
     long_description = "\n" + f.read()
 
 MAJOR_VERSION = "0"
-MINOR_VERSION = "0"
-MICRO_VERSION = "3"
+MINOR_VERSION = "1"
+MICRO_VERSION = "0"
 VERSION = "{}.{}.{}".format(MAJOR_VERSION, MINOR_VERSION, MICRO_VERSION)
 
 
@@ -28,6 +28,7 @@ setup(
         "simple-term-menu",
         "requests",
         "colorama",
+        "notify-py"
     ],
     classifiers=[
         "Intended Audience :: Developers",

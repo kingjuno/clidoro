@@ -26,3 +26,5 @@ TODO:
 - [x] pypi
 - [ ] background sound
 - [ ] custom notification sound (use my [data-server](https://github.com/kingjuno/data-server))
+- [x] Desktop Notification popup
+- [x] Clear Database
