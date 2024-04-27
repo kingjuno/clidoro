@@ -34,6 +34,7 @@ def timer(menu, _save=False):
             break
         else:
             _time = times[menu_entry_index]
+            start_time = timestamp_to_datetime(time.time())
             stats = _timer(
                 _time, "simple-notification", CACHE_DIR, "pomodoro" if _save else "break"
             )
